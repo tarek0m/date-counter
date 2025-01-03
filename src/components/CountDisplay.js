@@ -1,13 +1,18 @@
 import React from 'react';
 
-function CountDisplay({ count, setCount, realCount }) {
+function CountDisplay({ step, count, setCount }) {
+  const handleChange = (e) => {
+    const newValue = Number(e.target.value);
+    setCount(newValue);
+  };
+
   return (
     <div className='count'>
-      <button type='button' onClick={() => setCount(count - 1)}>
+      <button type='button' onClick={() => setCount(count - step)}>
         -
       </button>
-      <span>Count: {realCount}</span>
-      <button type='button' onClick={() => setCount(count + 1)}>
+      <input type='text' value={count} onChange={handleChange} />
+      <button type='button' onClick={() => setCount(count + step)}>
         +
       </button>
     </div>

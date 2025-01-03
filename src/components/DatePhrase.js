@@ -1,17 +1,17 @@
 import React from 'react';
 import { addDays } from '../utils/addDays';
 
-function DatePhrase({ realCount }) {
+function DatePhrase({ count }) {
   return (
     <div className='phrase capitalize'>
-      {realCount > 0 ? (
-        <span>{realCount} day(s) from today is</span>
-      ) : realCount === 0 ? (
+      {count > 0 ? (
+        <span>{count} day(s) from today is</span>
+      ) : count == 0 ? (
         <span>today is</span>
       ) : (
-        <span>{realCount * -1} day(s) ago was</span>
+        <span>{count * -1} day(s) ago was</span>
       )}{' '}
-      {addDays(realCount)}
+      {addDays(count)}
     </div>
   );
 }

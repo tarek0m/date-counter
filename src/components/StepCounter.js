@@ -1,22 +1,22 @@
 import React from 'react';
 
 function StepCounter({ step, setStep }) {
+  const handleChange = (e) => {
+    const newValue = Number(e.target.value);
+    setStep(newValue);
+  };
+
   return (
     <div className='step'>
-      <button
-        type='button'
-        onClick={() => {
-          if (step > 1) {
-            setStep(step - 1);
-          }
-        }}
-      >
-        -
-      </button>
-      <span>Step: {step}</span>
-      <button type='button' onClick={() => setStep(step + 1)}>
-        +
-      </button>
+      <input
+        type='range'
+        min={1}
+        max={10}
+        value={step}
+        onChange={handleChange}
+      />
+      <div></div>
+      <span>{step}</span>
     </div>
   );
 }

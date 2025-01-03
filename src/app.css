@@ -27,7 +27,8 @@
   text-transform: uppercase;
 }
 
-button {
+button,
+input[type='range'] {
   background-color: var(--primary-color);
   color: white;
   border: none;
@@ -39,7 +40,7 @@ button {
 }
 
 button:hover {
-  background-color: darken(var(--primary-color), 10%);
+  background-color: #333;
 }
 
 button:disabled {
