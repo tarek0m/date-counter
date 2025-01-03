@@ -1,16 +1,61 @@
+:root {
+  --primary-color: #4caf50;
+  --secondary-color: #f0f0f0;
+  --text-color: #333;
+  --border-radius: 8px;
+  --padding: 16px;
+  --margin: 16px;
+  --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 .app {
   display: flex;
   flex-direction: column;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  margin: 10px;
-  padding: 10px;
-  gap: 10px;
-  width: 300px;
+  border: 1px solid var(--primary-color);
+  border-radius: var(--border-radius);
+  margin: var(--margin);
+  padding: var(--padding);
+  gap: var(--padding);
+  width: 320px;
   justify-content: center;
   align-items: center;
+  background-color: var(--secondary-color);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .capitalize::first-letter {
   text-transform: uppercase;
+}
+
+button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius);
+  padding: 8px 16px;
+  cursor: pointer;
+  font-family: var(--font-family);
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: darken(var(--primary-color), 10%);
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.step,
+.count {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.phrase {
+  font-family: var(--font-family);
+  color: var(--text-color);
+  text-align: center;
 }
